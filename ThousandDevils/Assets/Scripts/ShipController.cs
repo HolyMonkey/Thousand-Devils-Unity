@@ -1,32 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-    [SerializeField] private Vector2 shipSpeed;
+    [SerializeField] private float _shipAngularSpeed;
 
-    [SerializeField] private float shipAngularSpeed;
+    [SerializeField] private Vector2 _shipSpeed;
+    [SerializeField] private Vector2 _windSpeed;
+    [SerializeField] private Vector2 _flowSpeed;
 
-    [SerializeField] private Vector2 windSpeed;
+    [SerializeField] private bool _isSailRaised;
 
-    [SerializeField] private Vector2 flowSpeed;
+    private Rigidbody2D _rb;
 
-    private Rigidbody2D rb;
-
-    // Start is called before the first frame update
     void Start()
     {
-        shipSpeed = new Vector2(0, 100f);
-        shipAngularSpeed = 800f;
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
+
+        _isSailRaised = true;
+
+        _shipAngularSpeed = 800f;
+
+        _shipSpeed = new Vector2(0, 100f);
+        _flowSpeed = new Vector2(50f, -50f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = shipSpeed * Time.deltaTime;
+        _rb.velocity = (_shipSpeed + _flowSpeed) * Time.deltaTime;
 
-        rb.angularVelocity = -shipAngularSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
+        _rb.angularVelocity = -_shipAngularSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
     }
 }
