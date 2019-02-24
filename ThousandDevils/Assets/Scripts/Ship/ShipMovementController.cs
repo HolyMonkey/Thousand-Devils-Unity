@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Ship
 {
     public class ShipMovementController : MonoBehaviour
     {
@@ -14,7 +14,7 @@ namespace Assets.Scripts
 
         [SerializeField] private float _turnDirection;
 
-        private readonly Vector2 _normal = Vector2.up;
+        private Vector2 _normal = Vector2.down;
 
         private Rigidbody2D _rb;
 
