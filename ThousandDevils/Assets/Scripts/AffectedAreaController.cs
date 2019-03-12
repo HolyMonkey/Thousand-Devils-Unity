@@ -1,36 +1,31 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts;
+using UnityEngine;
 
 public class AffectedAreaController : MonoBehaviour
 {
-    private readonly Color _greenColor = new Color32(150, 255, 185, 250);
-    private readonly Color _greyColor = new Color32(125, 125, 125, 100);
+    [SerializeField] private float _distance;
+
+    private readonly Vector2 _normal = Vector2.down;
 
     void Start()
     {
-        SetAffectedAreaColor(_greyColor);
+        _distance = 5;
     }
 
     void Update()
     {
-    }
+        var startPosition = transform.position;
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-            SetAffectedAreaColor(_greenColor);
-    }
+        var direction = transform.TransformDirection(_normal);
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-            SetAffectedAreaColor(_greyColor);
-    }
+        var endPosition = transform.position + _distance * direction;
 
-    private void SetAffectedAreaColor(Color color)
-    {
-        LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = color;
-        lineRenderer.endColor = color;
+        var hit = Physics2D.Raycast(startPosition, direction, _distance);
+
+        var areaColor = hit.collider && hit.collider.GetComponent<AffectableObject>() 
+            ? Color.green 
+            : Color.grey;
+
+        Debug.DrawLine(startPosition, endPosition, areaColor);
     }
 }

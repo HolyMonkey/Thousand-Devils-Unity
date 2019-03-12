@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4051515006544292943}
   - component: {fileID: 4051515006544292936}
   - component: {fileID: 4051515006544292937}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,6 +200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: World Space Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8616801537749489836, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8616801537749489837, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,6 +320,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8616801537928519955, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616801536933274815, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616801538435966360, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1cb3d5e996c204189551b52a30949e, type: 3}
 --- !u!224 &7004514011292349333 stripped
@@ -334,6 +354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cannon6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3492360554825502100, guid: 1dee686897fe6bd4da21879752fd522a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3492360554825502101, guid: 1dee686897fe6bd4da21879752fd522a,
         type: 3}
@@ -416,6 +441,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon3
       objectReference: {fileID: 0}
+    - target: {fileID: 3492360554825502100, guid: 1dee686897fe6bd4da21879752fd522a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3492360554825502101, guid: 1dee686897fe6bd4da21879752fd522a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -496,6 +526,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cannon4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3492360554825502100, guid: 1dee686897fe6bd4da21879752fd522a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3492360554825502101, guid: 1dee686897fe6bd4da21879752fd522a,
         type: 3}
@@ -578,6 +613,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon5
       objectReference: {fileID: 0}
+    - target: {fileID: 3492360554825502100, guid: 1dee686897fe6bd4da21879752fd522a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3492360554825502101, guid: 1dee686897fe6bd4da21879752fd522a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -659,6 +699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon2
       objectReference: {fileID: 0}
+    - target: {fileID: 3492360554825502100, guid: 1dee686897fe6bd4da21879752fd522a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3492360554825502101, guid: 1dee686897fe6bd4da21879752fd522a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -739,6 +784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cannon1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3492360554825502100, guid: 1dee686897fe6bd4da21879752fd522a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3492360554825502101, guid: 1dee686897fe6bd4da21879752fd522a,
         type: 3}
