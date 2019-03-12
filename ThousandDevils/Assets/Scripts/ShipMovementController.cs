@@ -7,8 +7,8 @@ namespace Assets.Scripts
         [SerializeField] private float _shipAngularSpeed;
         [SerializeField] private float _shipSpeedMagnitude;
 
-        [SerializeField] private Vector2 _windSpeed;
-        [SerializeField] private Vector2 _flowSpeed;
+        [System.NonSerialized] public Vector2 _windSpeed;
+        [System.NonSerialized] public Vector2 _flowSpeed;
 
         [SerializeField] private bool _isSailRaised;
 
@@ -16,7 +16,7 @@ namespace Assets.Scripts
 
         private Rigidbody2D _rb;
 
-        private Vector2 ShipDirection => Quaternion.Euler(0, 0, _rb.rotation) * _normal;
+        private Vector2 ShipDirection => Quaternion.Euler(0, 0, _rb.rotation) * _normal;     
 
         void Start()
         {
@@ -27,8 +27,8 @@ namespace Assets.Scripts
             _shipAngularSpeed = 2000;
             _shipSpeedMagnitude = 50;
 
-            _windSpeed = new Vector2(0, 0);
-            _flowSpeed = new Vector2(0, 0);
+            //_windSpeed = new Vector2(0, 0);
+            //_flowSpeed = new Vector2(0, 0);
         }
 
         void Update()
@@ -40,7 +40,7 @@ namespace Assets.Scripts
             _rb.angularVelocity = -_shipAngularSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
         }
 
-        private Vector2 GetSpeedSpawnedByWind()
+      public Vector2 GetSpeedSpawnedByWind()
         {
             if (_isSailRaised == false)
                 return new Vector2(0, 0);

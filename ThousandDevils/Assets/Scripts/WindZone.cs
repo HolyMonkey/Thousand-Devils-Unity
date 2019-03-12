@@ -2,25 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindZone : MonoBehaviour
+namespace Assets.Scripts
 {
-    [SerializeField] private GameObject _hero;
-    [SerializeField] private float _windSpeed;
-
-    private Rigidbody2D _rb2D;
-    
-    void Start()
+    public class WindZone : MonoBehaviour
     {
-        _rb2D= _hero.GetComponent<Rigidbody2D>(); 
-    }
+        [SerializeField] private GameObject _hero;
+        public Vector2 _windSpeed;
+        public Vector2 _flowSpeed;
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        WindZones();
-    }
+        ShipMovementController _movementController;
 
-    private void WindZones()
-    {
-      _rb2D.AddForce(transform.right * _windSpeed);
+        private void Start()
+        {
+            _movementController = _hero.GetComponent<ShipMovementController>();
+        }
+
+        public void OnTriggerStay2D(Collider2D collision)
+        {
+            WindZones();
+            FlowZones();
+        }
+
+        private void WindZones()
+        {
+            _movementController._windSpeed = _windSpeed;
+            _movementController.GetSpeedSpawnedByWind();
+          
+        }
+
+        private void FlowZones()
+        {
+            _movementController._flowSpeed = _flowSpeed;
+        }
     }
 }
