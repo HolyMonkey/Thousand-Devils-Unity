@@ -1,7 +1,7 @@
-﻿using Assets.Scripts;
+﻿using Assets.Scripts.Ship;
 using UnityEngine;
 
-public class AffectedAreaController : MonoBehaviour
+public class AffectedArea : MonoBehaviour
 {
     [SerializeField] private float _distance;
 
@@ -22,7 +22,7 @@ public class AffectedAreaController : MonoBehaviour
 
         var hit = Physics2D.Raycast(startPosition, direction, _distance);
 
-        var areaColor = hit.collider && hit.collider.GetComponent<AffectableObject>() 
+        var areaColor = hit.collider && hit.collider.GetComponent<ShipHealth>() 
             ? Color.green 
             : Color.grey;
 
