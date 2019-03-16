@@ -12,9 +12,8 @@ namespace Assets.Scripts
 
         public void OnTriggerStay2D(Collider2D collision)
         {
-
+            _movementController = collision.GetComponent<ShipMovementController>();
             FlowZones(_movementController);
-            Debug.Log(_movementController.WindSpeed);
         }
 
         private void FlowZones(ShipMovementController _movementController)
