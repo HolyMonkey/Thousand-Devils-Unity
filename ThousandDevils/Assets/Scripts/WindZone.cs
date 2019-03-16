@@ -6,33 +6,31 @@ namespace Assets.Scripts
 {
     public class WindZone : MonoBehaviour
     {
-        [SerializeField] private GameObject _hero;
         public Vector2 _windSpeed;
         public Vector2 _flowSpeed;
 
         ShipMovementController _movementController;
 
-        private void Start()
-        {
-            _movementController = _hero.GetComponent<ShipMovementController>();
-        }
-
         public void OnTriggerStay2D(Collider2D collision)
         {
-            WindZones();
+            _movementController = collision.GetComponent<ShipMovementController>();
+            WindZones(_movementController);
             FlowZones();
+            Debug.Log(_movementController.WindSpeed);
+
+            
         }
 
-        private void WindZones()
+        private void WindZones(ShipMovementController _movementController)
         {
-            _movementController._windSpeed = _windSpeed;
+            _movementController.WindSpeed = _windSpeed;
             _movementController.GetSpeedSpawnedByWind();
           
         }
 
         private void FlowZones()
         {
-            _movementController._flowSpeed = _flowSpeed;
+            _movementController.FlowSpeed = _flowSpeed;
         }
     }
 }
