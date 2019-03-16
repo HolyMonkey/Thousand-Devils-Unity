@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3492360554825502101}
   - component: {fileID: 5717210384335968582}
   - component: {fileID: 3669040332861176378}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
