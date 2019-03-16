@@ -1,31 +1,57 @@
 ﻿using Assets.Scripts.Ship;
 using UnityEngine;
 
-public class AffectedArea : MonoBehaviour
+namespace Assets.Scripts
 {
-    [SerializeField] private float _distance;
-
-    private readonly Vector2 _normal = Vector2.down;
-
-    void Start()
+    public class AffectedArea : MonoBehaviour
     {
-        _distance = 5;
-    }
+        [SerializeField] private float _distance;
 
-    void Update()
-    {
-        var startPosition = transform.position;
+        private readonly Vector2 _normal = Vector2.down;
 
-        var direction = transform.TransformDirection(_normal);
+        private LineRenderer _lineRenderer;
 
-        var endPosition = transform.position + _distance * direction;
+        private void Start()
+        {
+            _distance = 5;
 
-        var hit = Physics2D.Raycast(startPosition, direction, _distance);
+            _lineRenderer = gameObject.GetComponent<LineRenderer>();
+            _lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
 
-        var areaColor = hit.collider && hit.collider.GetComponent<ShipHealth>() 
-            ? Color.green 
-            : Color.grey;
+            SetLineRendererColor(Color.grey);
+        }
 
-        Debug.DrawLine(startPosition, endPosition, areaColor);
+        private void Update()
+        {
+            var startPosition = transform.position;
+
+            var direction = transform.TransformDirection(_normal);
+
+            var endPosition = transform.position + _distance * direction;
+
+            var hit = Physics2D.Raycast(startPosition, direction, _distance);
+
+            var areaColor = hit.collider && hit.collider.GetComponent<ShipHealth>() 
+                ? Color.green 
+                : Color.grey;
+
+            DrawLineRenderer(startPosition, endPosition, areaColor);
+
+            Debug.DrawLine(startPosition, endPosition, areaColor);
+        }
+
+        private void DrawLineRenderer(Vector3 startPosition, Vector3 endPosition, Color color)
+        {
+            _lineRenderer.SetPosition(0, startPosition);
+            _lineRenderer.SetPosition(1, endPosition);
+
+            SetLineRendererColor(color);
+        }
+
+        private void SetLineRendererColor(Color color)
+        {
+            _lineRenderer.startColor = color;
+            _lineRenderer.endColor = color;
+        }
     }
 }
