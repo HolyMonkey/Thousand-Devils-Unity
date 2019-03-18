@@ -49,8 +49,6 @@ namespace Assets.Scripts
             }
 
             DrawLineRenderer(startPosition, lineRendererEndPosition, areaColor);
-
-            Debug.DrawLine(startPosition, endPosition, areaColor);
         }
 
         private void DrawLineRenderer(Vector2 startPosition, Vector2 endPosition, Color color)
