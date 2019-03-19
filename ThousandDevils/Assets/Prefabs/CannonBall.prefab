@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1789480654450192805}
   - component: {fileID: 1782791286134125510}
   - component: {fileID: 8965636218805606722}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CannonBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d194d3b59e73ef4385f247e43a321c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
-  MaximumFlightRange: 5
+  _speed: 0
+  _maximumFlightRange: 0
 --- !u!114 &1782791286134125510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071dad0003d04954eb752636b3ff5d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 0
+  _damage: 0
 --- !u!61 &8965636218805606722
 BoxCollider2D:
   m_ObjectHideFlags: 0
