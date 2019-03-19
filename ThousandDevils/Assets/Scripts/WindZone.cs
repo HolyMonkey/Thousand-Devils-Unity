@@ -6,7 +6,8 @@ namespace Assets.Scripts
 {
     public class WindZone : MonoBehaviour
     {
-      [SerializeField] private Vector2 _windSpeed;
+        [SerializeField] private Vector2 _windSpeed;
+
         private Vector2 _startWindSpead = new Vector2(0,0);
         
         ShipMovementController _movementController;
@@ -20,7 +21,6 @@ namespace Assets.Scripts
         private void WindZones(ShipMovementController _movementController)
         {
             _movementController.WindSpeed = _windSpeed;
-            _movementController.GetSpeedSpawnedByWind();
         }
 
         private void OnTriggerExit2D(Collider2D collision)
