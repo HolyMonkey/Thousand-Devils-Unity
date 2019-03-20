@@ -12,7 +12,9 @@ namespace Assets.Scripts
 
         [SerializeField] private bool _isSailRaised;
 
-        private readonly Vector2 _normal = Vector2.up;
+        [SerializeField] private float _turnDirection;
+
+        private Vector2 _normal = Vector2.down;
 
         private Rigidbody2D _rb;
 
@@ -23,6 +25,7 @@ namespace Assets.Scripts
 
         void Start()
         {
+            _turnDirection = 0;
             _rb = GetComponent<Rigidbody2D>();
 
             _isSailRaised = true;
@@ -40,10 +43,10 @@ namespace Assets.Scripts
 
             _rb.velocity = (_shipSpeedMagnitude * ShipDirection + speedSpawnedByWind + _flowSpeed) * Time.deltaTime;
 
-            _rb.angularVelocity = -_shipAngularSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
+            _rb.angularVelocity = -_shipAngularSpeed * Time.deltaTime * _turnDirection;
         }
 
-      public Vector2 GetSpeedSpawnedByWind()
+        private Vector2 GetSpeedSpawnedByWind()
         {
             if (_isSailRaised == false)
                 return new Vector2(0, 0);
@@ -59,6 +62,16 @@ namespace Assets.Scripts
                 return Vector2.zero;
 
             return onNormal * Vector2.Dot(vector, onNormal) / product;
+        }
+
+        public void ToggleSailRaised()
+        {
+            _isSailRaised = !_isSailRaised;
+        }
+
+        public void SetTurnDirection(float turnDirection)
+        {
+            _turnDirection = turnDirection;
         }
     }
 }
