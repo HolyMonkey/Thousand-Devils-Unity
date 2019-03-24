@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 
-public class CameraController : MonoBehaviour
+namespace Assets.Scripts
 {
-    [SerializeField] private GameObject _player;
-
-    private Vector3 _offset;
-
-    void Start()
+    public class CameraController : MonoBehaviour
     {
-        _offset = transform.position - _player.transform.position;
-    }
+        [SerializeField] private GameObject _player;
 
-    void LateUpdate()
-    {
-        transform.position = _player.transform.position + _offset;
+        private Vector3 _offset;
+
+        void Start()
+        {
+            _offset = transform.position - _player.transform.position;
+        }
+
+        void LateUpdate()
+        {
+            transform.position = _player.transform.position + _offset;
+        }
     }
 }
