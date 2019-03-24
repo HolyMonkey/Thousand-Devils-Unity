@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Ship
+namespace Assets.Scripts
 {
     public class ShipMovementController : MonoBehaviour
     {
@@ -12,9 +12,7 @@ namespace Assets.Scripts.Ship
 
         [SerializeField] private bool _isSailRaised;
 
-        [SerializeField] private float _turnDirection;
-
-        private Vector2 _normal = Vector2.down;
+        private readonly Vector2 _normal = Vector2.up;
 
         private Rigidbody2D _rb;
 
@@ -22,7 +20,6 @@ namespace Assets.Scripts.Ship
 
         void Start()
         {
-            _turnDirection = 0;
             _rb = GetComponent<Rigidbody2D>();
 
             _isSailRaised = true;
@@ -40,7 +37,7 @@ namespace Assets.Scripts.Ship
 
             _rb.velocity = (_shipSpeedMagnitude * ShipDirection + speedSpawnedByWind + _flowSpeed) * Time.deltaTime;
 
-            _rb.angularVelocity = -_shipAngularSpeed * Time.deltaTime * _turnDirection;
+            _rb.angularVelocity = -_shipAngularSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
         }
 
         private Vector2 GetSpeedSpawnedByWind()
@@ -59,16 +56,6 @@ namespace Assets.Scripts.Ship
                 return Vector2.zero;
 
             return onNormal * Vector2.Dot(vector, onNormal) / product;
-        }
-
-        public void ToggleSailRaised()
-        {
-            _isSailRaised = !_isSailRaised;
-        }
-
-        public void SetTurnDirection(float turnDirection)
-        {
-            _turnDirection = turnDirection;
         }
     }
 }
