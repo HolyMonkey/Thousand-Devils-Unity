@@ -31,23 +31,15 @@ namespace Assets.Scripts
 
             var hit = Physics2D.Raycast(startPosition, direction, _distance);
 
-            var wasHitted = hit.collider;
+            var wasHitted = hit.collider && hit.collider.GetComponent<ShipHealth>();
 
             Color areaColor;
             Vector2 lineRendererEndPosition;
 
             if (wasHitted)
             {
-                if (hit.collider.GetComponent<ShipHealth>())
-                {
-                    areaColor = Color.green;
-                    lineRendererEndPosition = hit.point;
-                }
-                else
-                {
-                    areaColor = Color.grey;
-                    lineRendererEndPosition = hit.point;
-                }
+                areaColor = Color.green;
+                lineRendererEndPosition = hit.point;
 
             }
             else
