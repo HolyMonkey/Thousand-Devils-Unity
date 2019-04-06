@@ -39,15 +39,9 @@ namespace Assets.Scripts
             if (wasHitted)
             {
                 if (hit.collider.GetComponent<ShipHealth>())
-                {
                     areaColor = Color.green;
-                    lineRendererEndPosition = hit.point;
-                }
-                else
-                {
-                    lineRendererEndPosition = hit.point;
-                }
 
+                lineRendererEndPosition = hit.point;
             }
             else
             {
