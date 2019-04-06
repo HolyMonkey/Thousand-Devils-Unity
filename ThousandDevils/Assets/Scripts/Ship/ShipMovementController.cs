@@ -17,13 +17,7 @@ namespace Assets.Scripts.Ship
 
         private Vector2 _normal = Vector2.down;
 
-        internal void ApplyFlow(FlowType flowType, Vector2 impactVector)
-        {
-            if (flowType == FlowType.Wind)
-                _windSpeed += impactVector;
-            else
-                _flowSpeed += impactVector;
-        }
+        
 
         private Rigidbody2D _rb;
 
@@ -78,6 +72,14 @@ namespace Assets.Scripts.Ship
         public void SetTurnDirection(float turnDirection)
         {
             _turnDirection = turnDirection;
+        }
+
+        public void ApplyFlow(FlowType flowType, Vector2 impactVector)
+        {
+            if (flowType == FlowType.Wind)
+                _windSpeed += impactVector;
+            else
+                _flowSpeed += impactVector;
         }
     }
 }

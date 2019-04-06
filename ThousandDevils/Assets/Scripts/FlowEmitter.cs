@@ -4,10 +4,10 @@ using UnityEngine;
 public enum FlowType { Flow, Wind };
 public class FlowEmitter : MonoBehaviour
 {
-    public FlowType flowType;
-    public float flowPower = 10;
+    [SerializeField] private FlowType _flowType;
+    [SerializeField] public float _flowPower = 10;
 
-    private Vector2 impactVector => transform.up * flowPower;
+    private Vector2 impactVector => transform.up * _flowPower;
 
     private void OnTriggerEnter2D(Collider2D collision) =>
         ApplyFlowToCollisionObjectWithMultiplier(collision);
@@ -18,9 +18,7 @@ public class FlowEmitter : MonoBehaviour
     private void ApplyFlowToCollisionObjectWithMultiplier(Collider2D collision, int multiplier = 1)
     {
         ShipMovementController movementController = collision.gameObject?.GetComponent<ShipMovementController>();
-        if (movementController == null) return;
-
-        movementController.ApplyFlow(flowType, impactVector * multiplier);
+        movementController.ApplyFlow(_flowType, impactVector * multiplier);
     }
 
 }
