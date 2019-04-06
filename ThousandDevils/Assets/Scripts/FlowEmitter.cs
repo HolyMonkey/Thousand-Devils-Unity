@@ -5,7 +5,7 @@ public enum FlowType { Flow, Wind };
 public class FlowEmitter : MonoBehaviour
 {
     [SerializeField] private FlowType _flowType;
-    [SerializeField] public float _flowPower = 10;
+    [SerializeField] private float _flowPower = 10;
 
     private Vector2 impactVector => transform.up * _flowPower;
 
