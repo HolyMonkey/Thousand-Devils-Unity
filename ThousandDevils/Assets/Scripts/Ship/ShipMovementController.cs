@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Ship
 {
@@ -15,6 +16,14 @@ namespace Assets.Scripts.Ship
         [SerializeField] private float _turnDirection;
 
         private Vector2 _normal = Vector2.down;
+
+        internal void ApplyFlow(FlowType flowType, Vector2 impactVector)
+        {
+            if (flowType == FlowType.Wind)
+                _windSpeed += impactVector;
+            else
+                _flowSpeed += impactVector;
+        }
 
         private Rigidbody2D _rb;
 
