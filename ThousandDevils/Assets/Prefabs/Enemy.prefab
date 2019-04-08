@@ -150,6 +150,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8505559143617039586}
+        m_MethodName: HealthUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2739070809189703856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +358,20 @@ Transform:
   m_Father: {fileID: 2739070809189703863}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+--- !u!114 &8505559143617039586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396312610036863160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d8230f5622d574d856f1e8079e4c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 2739070809189703883}
+  Slider: {fileID: 3396312610036863162}
 --- !u!1001 &4178015637339165002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -499,6 +529,31 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1646465082924564979, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000000018626451
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646465082924564979, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646465082924564979, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646465082924564979, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646465082924564976, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1cb3d5e996c204189551b52a30949e, type: 3}
 --- !u!224 &5651538481566566887 stripped
@@ -507,3 +562,21 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4178015637339165002}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3396312610036863160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1646465082924564978, guid: 3e1cb3d5e996c204189551b52a30949e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4178015637339165002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3396312610036863162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646465082924564976, guid: 3e1cb3d5e996c204189551b52a30949e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4178015637339165002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396312610036863160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
