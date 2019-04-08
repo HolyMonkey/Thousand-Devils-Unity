@@ -17,7 +17,7 @@ public class FlowEmitter : MonoBehaviour
 
     private void ApplyFlowToCollisionObjectWithMultiplier(Collider2D collision, int multiplier = 1)
     {
-        ShipMovementController movementController = collision.gameObject?.GetComponent<ShipMovementController>();
+        ShipMovementController movementController = collision.gameObject.GetComponent<ShipMovementController>();
         movementController.ApplyFlow(_flowType, impactVector * multiplier);
     }
 
