@@ -7,20 +7,13 @@ namespace Assets.Scripts.Ship
     {
         [SerializeField] private float _shipAngularSpeed;
         [SerializeField] private float _shipSpeedMagnitude;
-
         [SerializeField] private Vector2 _windSpeed;
         [SerializeField] private Vector2 _flowSpeed;
-
         [SerializeField] private bool _isSailRaised;
-
         [SerializeField] private float _turnDirection;
 
         private Vector2 _normal = Vector2.down;
-
-        
-
         private Rigidbody2D _rb;
-
         private Vector2 ShipDirection => Quaternion.Euler(0, 0, _rb.rotation) * _normal;
 
         void Start()
