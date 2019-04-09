@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Ship
 {
@@ -7,6 +9,8 @@ namespace Assets.Scripts.Ship
         [SerializeField] private int _health;
         
         public int Health => _health;
+
+        public UnityEvent OnHealthChange;
 
         void Start()
         {
@@ -18,6 +22,8 @@ namespace Assets.Scripts.Ship
             var remainingHealth = Health - (int) healthToDecrease;
 
             _health = remainingHealth <= 0 ? 0 : remainingHealth;
+            if (OnHealthChange != null)
+                OnHealthChange.Invoke();
         }
     }
 }
