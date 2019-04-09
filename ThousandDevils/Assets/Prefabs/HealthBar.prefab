@@ -46,8 +46,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4781650893093983687}
   - component: {fileID: 4781650893093983684}
+  - component: {fileID: 132682265283918980}
   m_Layer: 5
-  m_Name: HealthBarNew
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +124,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &132682265283918980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781650893093983686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d8230f5622d574d856f1e8079e4c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 0}
+  Slider: {fileID: 4781650893093983684}
 --- !u!1 &4781650893173027355
 GameObject:
   m_ObjectHideFlags: 0

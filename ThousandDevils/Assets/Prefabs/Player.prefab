@@ -189,6 +189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2043079305147314726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,20 +347,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8616801537928519955, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 1646465083003872812, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
-      propertyPath: m_Layer
-      value: 2
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8616801536933274815, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 1646465083003872812, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616801538435966360, guid: 3e1cb3d5e996c204189551b52a30949e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
@@ -412,15 +412,25 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1646465083003872812, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 8616801537928519955, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1646465083003872812, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 6149063527907436720, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+      propertyPath: Health
+      value: 
+      objectReference: {fileID: 4051515006544292937}
+    - target: {fileID: 8616801536933274815, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616801538435966360, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1cb3d5e996c204189551b52a30949e, type: 3}
