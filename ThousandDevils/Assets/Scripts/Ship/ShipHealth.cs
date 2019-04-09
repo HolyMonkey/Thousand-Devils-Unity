@@ -12,7 +12,7 @@ namespace Assets.Scripts.Ship
 
         public UnityEvent OnHealthChange;
 
-        void Awake()
+        void Start()
         {
             _health = 200;
         }

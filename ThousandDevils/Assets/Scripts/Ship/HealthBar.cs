@@ -10,6 +10,7 @@ namespace Assets.Scripts.Ship
 
         void Start()
         {
+            Health.OnHealthChange.AddListener(HealthUpdate);
             Slider.maxValue = Health.Health;
             Slider.value = Health.Health;
         }
