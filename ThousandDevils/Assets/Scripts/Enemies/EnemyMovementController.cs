@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovementController : MonoBehaviour
 {
-    [SerializeField] private float angularSpeed = 180;
+    [SerializeField] private float _angularSpeed = 180;
     [SerializeField] private float _speed = 50;
     
     private Vector2 ShipDirection => Quaternion.Euler(0, 0, _rigidBody.rotation) * Vector2.down;
@@ -19,7 +19,7 @@ public class EnemyMovementController : MonoBehaviour
     void Update()
     {
         Quaternion rotation = Quaternion.LookRotation(_patroller.Waypoint.position - transform.position, Vector3.forward);
-        Quaternion targetRotation = Quaternion.RotateTowards(transform.rotation, rotation, angularSpeed * Time.deltaTime);
+        Quaternion targetRotation = Quaternion.RotateTowards(transform.rotation, rotation, _angularSpeed * Time.deltaTime);
         transform.rotation = new Quaternion(0, 0, targetRotation.z, targetRotation.w);
 
         _rigidBody.velocity = transform.up * -1 * _speed * Time.deltaTime;
