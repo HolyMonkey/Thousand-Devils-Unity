@@ -6,6 +6,17 @@ using UnityEngine;
 [System.Serializable]
 public class PatrolPath : MonoBehaviour
 {
+    private class WaypointWithDistance : IComparable<WaypointWithDistance>
+    {
+        public Transform Waypoint { get; set; }
+        public float Distance { get; set; }
+
+        public int CompareTo(WaypointWithDistance other)
+        {
+            return Distance > other.Distance ? 1 : Distance == other.Distance ? 0 : -1;
+        }
+    }
+
     [SerializeField] private List<Transform> _waypoints;
 
     public int GetClosestWaypointIndex(Transform transform) => _waypoints.IndexOf(GetClosestWaypoint(transform));
@@ -24,7 +35,7 @@ public class PatrolPath : MonoBehaviour
     }
 
     private Transform GetClosestWaypoint(Transform ownerTransform) =>
-            _waypoints.OrderBy(waypoint => Vector3.Distance(waypoint.position, ownerTransform.position)).FirstOrDefault();
+            _waypoints.Select(waypoint => new WaypointWithDistance { Waypoint = waypoint, Distance = Vector2.Distance(transform.position, waypoint.position)}).Min().Waypoint;
 
     private void OnDrawGizmosSelected()
     {

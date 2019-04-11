@@ -6,6 +6,9 @@ public class Patroller : MonoBehaviour
 
     [SerializeField] private float _waypointCheckDistance = 1;
     [SerializeField] private PatrolPath _patrolPath;
+
+    private int _currentWaypointIndex;
+
     private void Start()
     {
         _currentWaypointIndex = _patrolPath.GetClosestWaypointIndex(transform);
@@ -17,7 +20,6 @@ public class Patroller : MonoBehaviour
         {
             UpdateWaypoint();
         }
-        
     }
 
     private void UpdateWaypoint()
@@ -26,5 +28,4 @@ public class Patroller : MonoBehaviour
             _currentWaypointIndex = 0;
     }
 
-    private int _currentWaypointIndex;
 }
