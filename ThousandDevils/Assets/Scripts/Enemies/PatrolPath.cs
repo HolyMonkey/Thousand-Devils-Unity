@@ -6,17 +6,6 @@ using UnityEngine;
 [System.Serializable]
 public class PatrolPath : MonoBehaviour
 {
-    private class WaypointWithDistance : IComparable<WaypointWithDistance>
-    {
-        public Transform Waypoint { get; set; }
-        public float Distance { get; set; }
-
-        public int CompareTo(WaypointWithDistance other)
-        {
-            return Distance > other.Distance ? 1 : Distance == other.Distance ? 0 : -1;
-        }
-    }
-
     [SerializeField] private List<Transform> _waypoints;
 
     public int GetClosestWaypointIndex(Transform transform) => _waypoints.IndexOf(GetClosestWaypoint(transform));
@@ -34,8 +23,11 @@ public class PatrolPath : MonoBehaviour
         }
     }
 
+    private WaypointWithDistance SelectWaypointWithDistance(Transform waypoint) =>
+        new WaypointWithDistance(waypoint, transform.position);
+
     private Transform GetClosestWaypoint(Transform ownerTransform) =>
-            _waypoints.Select(waypoint => new WaypointWithDistance { Waypoint = waypoint, Distance = Vector2.Distance(transform.position, waypoint.position)}).Min().Waypoint;
+            _waypoints.Select(SelectWaypointWithDistance).Min().Waypoint;
 
     private void OnDrawGizmosSelected()
     {
@@ -49,5 +41,22 @@ public class PatrolPath : MonoBehaviour
         }
 
         Gizmos.DrawLine(filledWaypoints.Last(), filledWaypoints.First());
+    }
+
+    private class WaypointWithDistance : IComparable<WaypointWithDistance>
+    {
+        public Transform Waypoint { get; set; }
+        public float Distance { get; set; }
+
+        public WaypointWithDistance(Transform waypoint, Vector2 originPosition)
+        {
+            Waypoint = waypoint;
+            Distance = Vector2.Distance(originPosition, waypoint.position);
+        }
+
+        public int CompareTo(WaypointWithDistance other)
+        { 
+            return Distance > other.Distance ? 1 : Distance == other.Distance ? 0 : -1;
+        }
     }
 }
