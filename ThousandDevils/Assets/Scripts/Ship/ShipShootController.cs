@@ -6,6 +6,7 @@ namespace Assets.Scripts.Ship
 {
     public class ShipShootController : MonoBehaviour
     {
+        [SerializeField] private float _speed;
         public List<GameObject> Cannons;
 
         public void Shoot()
@@ -16,7 +17,7 @@ namespace Assets.Scripts.Ship
                 return;
 
             foreach (var cannon in Cannons)
-                PoolManager.GetInstance().PlacePooledObject("CannonBall", cannon.transform.position, cannon.transform.rotation);
+                PoolManager.GetInstance().PlacePooledObject("CannonBall", cannon.transform.position, cannon.transform.rotation, _speed);
 
             charger.StartCharge();
         }

@@ -11,6 +11,8 @@ namespace Assets.Scripts.Cannonball
         private Rigidbody2D _rb;
         private Vector3 _lastPosition;
 
+        public float Speed { set => _speed = value; }
+
         void Awake()
         {
             _speed = 3;

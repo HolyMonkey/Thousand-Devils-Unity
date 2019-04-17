@@ -26,8 +26,7 @@ namespace Assets.Scripts.Ship
             _rb = GetComponent<Rigidbody2D>();
 
             _isSailRaised = true;
-
-            _shipAngularSpeed = 2000;
+            
             _shipSpeedMagnitude = 50;
 
             _windSpeed = new Vector2(0, 0);

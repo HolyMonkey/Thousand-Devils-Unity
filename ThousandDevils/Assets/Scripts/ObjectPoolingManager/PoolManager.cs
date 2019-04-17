@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Cannonball;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.ObjectPoolingManager
@@ -31,7 +32,7 @@ namespace Assets.Scripts.ObjectPoolingManager
             }
         }
 
-        public GameObject PlacePooledObject(string name, Vector3 position, Quaternion rotation)
+        public GameObject PlacePooledObject(string name, Vector3 position, Quaternion rotation, float Speed)
         {
             if (_poolParts == null) return null;
 
@@ -42,6 +43,7 @@ namespace Assets.Scripts.ObjectPoolingManager
                 var result = _poolParts[i].ObjectPooling.GetFromPool().gameObject;
                 result.transform.position = position;
                 result.transform.rotation = rotation;
+                result.GetComponent<CannonballMovementController>().Speed = Speed;
                 result.SetActive(true);
 
                 return result;
