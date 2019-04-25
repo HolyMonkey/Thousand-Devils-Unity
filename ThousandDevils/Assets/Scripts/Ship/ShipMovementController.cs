@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -6,18 +7,13 @@ namespace Assets.Scripts
     {
         [SerializeField] private float _shipAngularSpeed;
         [SerializeField] private float _shipSpeedMagnitude;
-
         [SerializeField] private Vector2 _windSpeed;
         [SerializeField] private Vector2 _flowSpeed;
-
         [SerializeField] private bool _isSailRaised;
-
         [SerializeField] private float _turnDirection;
 
         private Vector2 _normal = Vector2.down;
-
         private Rigidbody2D _rb;
-
         private Vector2 ShipDirection => Quaternion.Euler(0, 0, _rb.rotation) * _normal;
 
         public Vector2 WindSpeed { get => _windSpeed; set => _windSpeed = value; }
@@ -72,6 +68,14 @@ namespace Assets.Scripts
         public void SetTurnDirection(float turnDirection)
         {
             _turnDirection = turnDirection;
+        }
+
+        public void ApplyFlow(FlowType flowType, Vector2 impactVector)
+        {
+            if (flowType == FlowType.Wind)
+                _windSpeed += impactVector;
+            else
+                _flowSpeed += impactVector;
         }
     }
 }

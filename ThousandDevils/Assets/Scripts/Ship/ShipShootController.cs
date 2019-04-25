@@ -10,8 +10,15 @@ namespace Assets.Scripts.Ship
 
         public void Shoot()
         {
+            var charger = gameObject.GetComponent<Charger>();
+
+            if (charger.IsReadyToShoot() == false)
+                return;
+
             foreach (var cannon in Cannons)
                 PoolManager.GetInstance().PlacePooledObject("CannonBall", cannon.transform.position, cannon.transform.rotation);
+
+            charger.StartCharge();
         }
     }
 }
