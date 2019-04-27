@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2043079305147314726}
   m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,22 +357,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 6149063527907436720, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: Health
+      value: 
+      objectReference: {fileID: 4051515006544292937}
+    - target: {fileID: 555658751193675974, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Color.g
       value: 0.9372549
       objectReference: {fileID: 0}
-    - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3155592482098596374, guid: 3e1cb3d5e996c204189551b52a30949e,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 3155592482098596374, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 555658751193675974, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -392,12 +387,22 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 555658751193675974, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 3155592482098596374, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Color.g
       value: 0.9372549
       objectReference: {fileID: 0}
-    - target: {fileID: 555658751193675974, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 3155592482098596374, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -417,11 +422,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6149063527907436720, guid: 3e1cb3d5e996c204189551b52a30949e,
-        type: 3}
-      propertyPath: Health
-      value: 
-      objectReference: {fileID: 4051515006544292937}
     - target: {fileID: 8616801536933274815, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Layer

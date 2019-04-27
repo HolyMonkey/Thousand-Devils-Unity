@@ -9,11 +9,25 @@ public class FlowEmitter : MonoBehaviour
 
     private Vector2 impactVector => transform.up * _flowPower;
 
-    private void OnTriggerEnter2D(Collider2D collision) =>
-        ApplyFlowToCollisionObjectWithMultiplier(collision);
+    //private void OnTriggerEnter2D(Collider2D collision) =>
+    //    ApplyFlowToCollisionObjectWithMultiplier(collision);
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && collision.tag == "Enemy")
+        {
+            ApplyFlowToCollisionObjectWithMultiplier(collision);
+        }  
+    }
 
-    private void OnTriggerExit2D(Collider2D collision) =>
-        ApplyFlowToCollisionObjectWithMultiplier(collision, -1);
+    //private void OnTriggerExit2D(Collider2D collision) =>
+    //    ApplyFlowToCollisionObjectWithMultiplier(collision, -1);
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && collision.tag == "Enemy")
+        {
+            ApplyFlowToCollisionObjectWithMultiplier(collision, -1);
+        } 
+    }
 
     private void ApplyFlowToCollisionObjectWithMultiplier(Collider2D collision, int multiplier = 1)
     {

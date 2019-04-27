@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Ship
 {
     public class ShipMovementController : MonoBehaviour
     {
@@ -15,9 +15,6 @@ namespace Assets.Scripts
         private Vector2 _normal = Vector2.down;
         private Rigidbody2D _rb;
         private Vector2 ShipDirection => Quaternion.Euler(0, 0, _rb.rotation) * _normal;
-
-        public Vector2 WindSpeed { get => _windSpeed; set => _windSpeed = value; }
-        public Vector2 FlowSpeed { get => _flowSpeed; set => _flowSpeed = value; }
 
         void Start()
         {
