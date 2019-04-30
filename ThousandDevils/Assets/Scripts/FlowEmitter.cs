@@ -13,7 +13,7 @@ public class FlowEmitter : MonoBehaviour
     //    ApplyFlowToCollisionObjectWithMultiplier(collision);
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && collision.tag == "Enemy")
+        if (collision.GetComponent<ShipMovementController>() != null)
         {
             ApplyFlowToCollisionObjectWithMultiplier(collision);
         }  
@@ -24,7 +24,7 @@ public class FlowEmitter : MonoBehaviour
     //    ApplyFlowToCollisionObjectWithMultiplier(collision, -1);
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && collision.tag == "Enemy")
+        if (collision.GetComponent<ShipMovementController>() != null)
         {
             ApplyFlowToCollisionObjectWithMultiplier(collision, -1);
         } 
