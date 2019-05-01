@@ -20,7 +20,7 @@ namespace Assets.Scripts.Ship
             foreach (var cannon in Cannons)
             {
                 var cannonBall = PoolManager.GetInstance().PlacePooledObject("CannonBall", cannon.transform.position, cannon.transform.rotation);
-                cannonBall.GetComponent<CannonballMovementController>().Speed = _speed;
+                cannonBall.GetComponent<CannonballMovementController>().ChangeSpeed(_speed);
             }
 
             charger.StartCharge();
