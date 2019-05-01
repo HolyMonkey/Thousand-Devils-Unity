@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Cannonball;
 using Assets.Scripts.ObjectPoolingManager;
 using UnityEngine;
 
@@ -17,7 +18,10 @@ namespace Assets.Scripts.Ship
                 return;
 
             foreach (var cannon in Cannons)
-                PoolManager.GetInstance().PlacePooledObject("CannonBall", cannon.transform.position, cannon.transform.rotation, _speed);
+            {
+                var cannonBall = PoolManager.GetInstance().PlacePooledObject("CannonBall", cannon.transform.position, cannon.transform.rotation);
+                cannonBall.GetComponent<CannonballMovementController>().Speed = _speed;
+            }
 
             charger.StartCharge();
         }

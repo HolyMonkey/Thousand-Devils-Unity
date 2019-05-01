@@ -32,7 +32,7 @@ namespace Assets.Scripts.ObjectPoolingManager
             }
         }
 
-        public GameObject PlacePooledObject(string name, Vector3 position, Quaternion rotation, float Speed)
+        public GameObject PlacePooledObject(string name, Vector3 position, Quaternion rotation)
         {
             if (_poolParts == null) return null;
 
@@ -43,7 +43,6 @@ namespace Assets.Scripts.ObjectPoolingManager
                 var result = _poolParts[i].ObjectPooling.GetFromPool().gameObject;
                 result.transform.position = position;
                 result.transform.rotation = rotation;
-                result.GetComponent<CannonballMovementController>().Speed = Speed;
                 result.SetActive(true);
 
                 return result;

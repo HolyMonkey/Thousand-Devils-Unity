@@ -21,6 +21,7 @@ namespace Assets.Scripts.Cannonball
 
         void Update()
         {
+            _rb.velocity = transform.up * _speed;
             var distance = Vector2.Distance(transform.position, _lastPosition);
 
             if (distance >= _maximumFlightRange)
@@ -31,7 +32,6 @@ namespace Assets.Scripts.Cannonball
         {
             _lastPosition = transform.position;
             _rb = transform.GetComponent<Rigidbody2D>();
-            _rb.velocity = transform.up * _speed;
         }
     }
 }
