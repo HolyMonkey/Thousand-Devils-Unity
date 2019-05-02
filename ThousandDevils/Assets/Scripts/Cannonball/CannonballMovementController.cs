@@ -10,12 +10,12 @@ namespace Assets.Scripts.Cannonball
 
         private Rigidbody2D _rb;
         private Vector3 _lastPosition;
-
-        public float Speed { set => _speed = value; }
+        
+        public float Speed { get => _speed; set => _speed = value; }
 
         void Awake()
         {
-            _speed = 3;
+            Speed = 3;
             _maximumFlightRange = 5;
         }
 
@@ -30,14 +30,14 @@ namespace Assets.Scripts.Cannonball
         void OnEnable()
         {
             _lastPosition = transform.position;
-            _rb = transform.GetComponent<Rigidbody2D>();
+            ChangeSpeed(Speed);
         }
 
         public void ChangeSpeed(float speed)
         {
-            _speed = speed;
+            Speed = speed;
             _rb = transform.GetComponent<Rigidbody2D>();
-            _rb.velocity = transform.up * _speed;
+            _rb.velocity = transform.up * Speed;
         }
     }
 }

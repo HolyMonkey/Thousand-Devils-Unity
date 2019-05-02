@@ -41645,11 +41645,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4051515006544292931, guid: adba831f240ff6e4cb568a1724a17826,
-        type: 3}
-      propertyPath: _shipAngularSpeed
-      value: 3000
-      objectReference: {fileID: 0}
     - target: {fileID: 4051515006544292943, guid: adba831f240ff6e4cb568a1724a17826,
         type: 3}
       propertyPath: _speed
