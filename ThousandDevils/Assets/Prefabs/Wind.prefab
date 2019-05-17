@@ -119,5 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aada5f11518afcd4180f3804bedc98e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowType: 1
-  flowPower: 30
+  _flowType: 0
+  _flowPower: 10

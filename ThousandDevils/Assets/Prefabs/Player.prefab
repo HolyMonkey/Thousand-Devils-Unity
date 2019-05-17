@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2043079305147314726}
   m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241c53bab26db12438133d5b580f5914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shipAngularSpeed: 0
+  _shipAngularSpeed: 3000
   _shipSpeedMagnitude: 0
   _windSpeed: {x: 0, y: 0}
   _flowSpeed: {x: 0, y: 0}
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71dee2f72c6af174aade6ea5d418836d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 3
   Cannons:
   - {fileID: 5442812239354580634}
   - {fileID: 5312833329191372546}
@@ -357,22 +358,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 6149063527907436720, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: Health
+      value: 
+      objectReference: {fileID: 4051515006544292937}
+    - target: {fileID: 555658751193675974, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Color.g
       value: 0.9372549
       objectReference: {fileID: 0}
-    - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3155592482098596374, guid: 3e1cb3d5e996c204189551b52a30949e,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 3155592482098596374, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 555658751193675974, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -392,12 +388,22 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 555658751193675974, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 3155592482098596374, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Color.g
       value: 0.9372549
       objectReference: {fileID: 0}
-    - target: {fileID: 555658751193675974, guid: 3e1cb3d5e996c204189551b52a30949e,
+    - target: {fileID: 3155592482098596374, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236930488821194256, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -417,11 +423,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6149063527907436720, guid: 3e1cb3d5e996c204189551b52a30949e,
-        type: 3}
-      propertyPath: Health
-      value: 
-      objectReference: {fileID: 4051515006544292937}
     - target: {fileID: 8616801536933274815, guid: 3e1cb3d5e996c204189551b52a30949e,
         type: 3}
       propertyPath: m_Layer
