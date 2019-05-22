@@ -10,14 +10,15 @@ namespace Assets.Scripts.Ship
     public class ShipShootController : MonoBehaviour
     {
         [SerializeField] private float _speed;
+        
+        [SerializeField] private int _minShootingAccuracy = 0;
+        [SerializeField] private int _maxShootingAccuracy = 100;
+
+        [SerializeField] private int _aimingSpeed = 30;
+
         public List<GameObject> Cannons;
 
         private float _shootingAccuracy;
-
-        [SerializeField] int _minShootingAccuracy = 0;
-        [SerializeField] int _maxShootingAccuracy = 100;
-
-        [SerializeField] int _aimingSpeed = 30;
 
         private Quaternion[] _cannonRotations;
 
@@ -55,8 +56,6 @@ namespace Assets.Scripts.Ship
 
                 Cannons[i].transform.localRotation = shootingDirection;
             }
-
-            Debug.Log("Shooting Accuracy = " + _shootingAccuracy);
         }
 
         public void ResetShootingAccuracy()
@@ -91,8 +90,6 @@ namespace Assets.Scripts.Ship
             // always between 0 and 1
             var normalizedAccuracy = (_shootingAccuracy - _minShootingAccuracy) / (_maxShootingAccuracy - _minShootingAccuracy);
             var newAngle = Mathf.Lerp(minAccuracyAngle, maxAccuracyAngle, normalizedAccuracy);
-
-            Debug.Log("Old Angle = " + angle + " New angle = " + newAngle);
 
             return newAngle;
         }
